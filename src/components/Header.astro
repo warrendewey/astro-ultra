@@ -1,0 +1,63 @@
+---
+const currentPath = Astro.url.pathname;
+
+const navLinks = [
+  {
+    href: "/blog",
+    label: "blog",
+    hoverColor: "hover:bg-sky-200",
+    color: "bg-sky-200",
+  },
+  {
+    href: "/projects",
+    label: "projects",
+    hoverColor: "hover:bg-yellow-200",
+    color: "bg-yellow-200",
+  },
+  {
+    href: "/about",
+    label: "about",
+    hoverColor: "hover:bg-red-200",
+    color: "bg-red-200",
+  },
+];
+---
+
+<header>
+  <div class="w-full px-24 pt-2 max-sm:px-5 max-sm:py-10
+max-w-7xl mx-auto">
+    <div class="flex justify-center">
+      <a href="/">
+        <div class="flex items-center italic text-2xl">
+          <h1>WARREN</h1>
+
+          <img
+            src="/triquetra.png"
+            width={60}
+            height={60}
+            alt="Home Icon"
+            class="aspect-auto"
+          /><h1>DEWEY</h1>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <nav class="w-full max-sm:px-5 max-sm:py-10
+max-w-5xl mx-auto">
+    <ul class="flex items-center pt-3 w-full max-w-5xl mx-auto">
+      {
+        navLinks.map((link) => (
+          <li
+            class={`${link.hoverColor} border border-black text-center flex grow transition-all
+              ${currentPath === link.href ? `grow-100 ${link.color}` : "flex-none"}`}
+          >
+            <a href={link.href} class="block w-full h-full px-3 py-1">
+              {link.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</header>

@@ -1,11 +1,13 @@
-// @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config";
+import react from "@astrojs/react";
 
-import tailwindcss from '@tailwindcss/vite';
+import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  vite: {
-    plugins: [tailwindcss()]
-  }
-});
+  integrations: [
+    react(),
+    tailwind()
+  // If you're using content collections, you no longer need to enable them
+  // as they are enabled by default in newer Astro versions
+  ]});
