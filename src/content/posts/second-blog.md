@@ -1,7 +1,7 @@
 ---
 author: "Warren Dewey"
 date: "2025-02-22"
-image: "realism.jpeg"
+image: "monopoly.jpeg"
 title: "Second blog post, Stretching Out!"
 ---
 
