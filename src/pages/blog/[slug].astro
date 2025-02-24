@@ -1,0 +1,32 @@
+---
+import { getCollection, CollectionEntry } from "astro:content";
+import H1 from "../../components/H1.astro";
+import Layout from "../../layouts/Layout.astro";
+import { postcss } from "tailwindcss";
+
+export const getStaticPaths = async () => {
+  const posts = await getCollection("posts");
+  const paths = posts.map((post) => {
+    return {
+      params: {
+        slug: post.slug,
+      },
+      props: {
+        post,
+      },
+    };
+  });
+  return paths;
+};
+
+type Props = {
+  post: CollectionEntry<"posts">;
+};
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+---
+
+<Layout title={post.data.title}>
+  <H1 text={post.data.title} />
+</Layout>
