@@ -5,14 +5,15 @@ import H1 from "../components/H1.astro";
 
 <Layout title="Home | Warren Dewey">
   <H1 text="Welcome to my personal website" />
-  <img
-    src="desert.jpeg"
-    width={700}
-    height={200}
-    alt="Me in the desert 2024"
-    class="shadow-xl mb-3 aspect-auto object-cover"
-  />
-
+  <div class="flex justify-center">
+    <img
+      src="desert.jpeg"
+      width={700}
+      height={200}
+      alt="Me in the desert 2024"
+      class="border border-black aspect-auto object-cover"
+    />
+  </div>
   <section class="mt-8">
     <h2>Latest Blog Posts</h2>
   </section>

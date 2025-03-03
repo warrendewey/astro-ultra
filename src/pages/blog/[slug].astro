@@ -1,6 +1,6 @@
 ---
 import { getCollection, CollectionEntry } from "astro:content";
-import H1 from "../../components/H1.astro";
+import H2 from "../../components/H2.astro";
 import Layout from "../../layouts/Layout.astro";
 import { postcss } from "tailwindcss";
 
@@ -28,21 +28,26 @@ const { Content } = await post.render();
 ---
 
 <Layout title={post.data.title}>
-  <H1 text={post.data.title} />
-  <img
-    src={post.data.image}
-    width={700}
-    height={200}
-    alt={post.data.title}
-    class="shadow-xl mb-3 aspect-auto object-cover"
-  />
-  <div class="flex">
-    <p>written by</p><p class="pl-1 uppercase text-red-500">
-      {post.data.author}
-    </p>
-  </div><div class="flex items-baseline">
-    <p>on</p>
-    <p class="text-xs pt-2 pl-1 text-red-500">{post.data.date}</p>
+  <div class="max-w-[700px] mx-auto px-4">
+    <H2 text={post.data.title} />
+    <div class="flex justify-center">
+      <img
+        src={post.data.image}
+        width={700}
+        height={200}
+        alt={post.data.title}
+        class="border border-black aspect-auto object-cover"
+      />
+    </div>
+    <div class="flex justify-center pt-1 font-bold">
+      <p>Written by</p><p class="pl-1 uppercase">
+        {post.data.author}
+      </p>
+    </div>
+    <div class="flex justify-center pt-1 text-xs">
+      <p>{post.data.date}</p>
+    </div>
+
+    <p class="pt-2"><Content /></p>
   </div>
-  <p class="pt-4"><Content /></p>
 </Layout>

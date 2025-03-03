@@ -8,18 +8,22 @@ type Props = {
 const { post } = Astro.props;
 ---
 
-<article class="transition-transform duration-300 hover:scale-105">
+<article
+  class="transition-transform duration-300 hover:bg-black hover:text-ice border border-black"
+>
   <a href={`/blog/${post.slug}`}>
     <img
       src={post.data.image}
       width={400}
       height={200}
       alt={post.data.title}
-      class="rounded-xl shadow-xl mb-3 aspect-auto object-cover"
+      class="border-b border-black aspect-auto object-cover"
     />
   </a>
-  <a href={`/blog/${post.slug}`} class="text-2xl font-semibold inline-block">
-    <h2>{post.data.title}</h2>
+  <a href={`/blog/${post.slug}`}>
+    <div class="m-3">
+      <h2 class="text-2xl font-semibold inline-block">{post.data.title}</h2>
+      <p class="line-clamp-2">{post.body}</p>
+    </div>
   </a>
-  <a href={`/blog/${post.slug}`}><p class="line-clamp-2">{post.body}</p></a>
 </article>

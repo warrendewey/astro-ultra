@@ -1,6 +1,6 @@
 ---
 author: "Warren Dewey"
-date: "02-22-2025"
+date: "February 22nd, 2025"
 image: "/monopoly.jpeg"
 title: "Second blog post, Stretching Out!"
 ---
