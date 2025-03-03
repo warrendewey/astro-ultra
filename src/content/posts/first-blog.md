@@ -1,8 +1,8 @@
 ---
-author: "Warren Dewey"
-date: "February 3rd, 2025"
-image: "/red-line.jpeg"
-title: "My First Blog Post, Hello World!"
+author: Warren Dewey
+date: February 3rd, 2025
+image: ./images/red-line.jpeg
+title: My First Blog Post, Hello World!
 ---
 
 Here is a test of my first blog post. I hope for many more to follow. I hope this works because I have been absolutely grinding.

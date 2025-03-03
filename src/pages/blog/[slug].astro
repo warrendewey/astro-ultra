@@ -3,6 +3,7 @@ import { getCollection, type CollectionEntry } from "astro:content";
 import H1 from "../../components/H1.astro";
 import Layout from "../../layouts/Layout.astro";
 import { postcss } from "tailwindcss";
+import { Image } from "astro:assets";
 
 export const getStaticPaths = async () => {
   const posts = await getCollection("posts");
@@ -31,7 +32,7 @@ const { Content } = await post.render();
   <div class="max-w-[700px] mx-auto">
     <H1 text={post.data.title} />
     <div class="flex justify-center">
-      <img
+      <Image
         src={post.data.image}
         width={700}
         height={200}
