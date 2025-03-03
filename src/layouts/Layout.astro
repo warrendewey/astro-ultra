@@ -1,6 +1,6 @@
 ---
 import Header from "../components/Header.astro";
-import NewNavBar from "../components/NewNavBar.astro";
+import { ClientRouter } from "astro:transitions";
 import Main from "../components/Main.astro";
 import "../styles/global.css";
 interface Props {
@@ -30,6 +30,7 @@ const {
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@800&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap"
       rel="stylesheet"
     />
+    <ClientRouter />
     <title>{title}</title>
   </head>
   <body class="min-h-screen bg-ice">
