@@ -1,7 +1,7 @@
 ---
 author: "Warren Dewey"
-date: "2025-02-03"
-image: "red-line.jpeg"
+date: "02-03-2025"
+image: "/red-line.jpeg"
 title: "My First Blog Post, Hello World!"
 ---
 
