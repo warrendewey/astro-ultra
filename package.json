@@ -9,6 +9,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/mdx": "^4.1.0",
     "@astrojs/react": "^4.2.0",
     "@vitejs/plugin-react": "^4.2.1",
     "astro": "^5.2.3"
