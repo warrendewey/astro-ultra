@@ -50,7 +50,7 @@ max-w-5xl mx-auto">
         navLinks.map((link) => (
           <li
             class={`${link.hoverColor} border border-black text-center flex grow transition-all
-              ${currentPath === link.href ? `grow-100 ${link.color}` : "flex-none"}`}
+              ${currentPath.startsWith(link.href) ? `grow-100 ${link.color}` : "flex-none"}`}
           >
             <a href={link.href} class="block w-full h-full px-3 py-1">
               {link.label}
