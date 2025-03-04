@@ -10,7 +10,7 @@ const { posts } = Astro.props;
 ---
 
 <div
-  class="grid grid-cols-2 gap-x-16 gap-y-14 max-md:grid-cols-1 max-md:gap-y-10 mb-24"
+  class="grid grid-cols-3 gap-x-8 gap-y-8 max-md:grid-cols-1 max-md:gap-y-10 mb-24"
 >
   {posts.map((post) => <Post post={post} />)}
 </div>
