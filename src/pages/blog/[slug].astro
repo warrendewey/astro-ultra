@@ -1,8 +1,7 @@
 ---
 import { getCollection, type CollectionEntry } from "astro:content";
-import H1 from "../../components/H1.astro";
+import H1C from "../../components/H1C.astro";
 import Layout from "../../layouts/Layout.astro";
-import { postcss } from "tailwindcss";
 import { Image } from "astro:assets";
 
 export const getStaticPaths = async () => {
@@ -30,7 +29,15 @@ const { Content } = await post.render();
 
 <Layout title={post.data.title}>
   <div class="max-w-[700px] mx-auto">
-    <H1 text={post.data.title} />
+    <H1C text={post.data.title} />
+    <div class="flex justify-center font-bold text-red-600">
+      <p>By</p><p class="pl-1 uppercase">
+        {post.data.author}
+      </p>
+    </div>
+    <p class="flex justify-center pb-3 text-xs">
+      {post.data.date}
+    </p>
     <div class="flex justify-center">
       <Image
         src={post.data.image}
@@ -41,15 +48,24 @@ const { Content } = await post.render();
         quality={100}
       />
     </div>
-    <div class="flex justify-center pt-1 font-bold">
-      <p>Written by</p><p class="pl-1 uppercase">
-        {post.data.author}
-      </p>
-    </div>
-    <div class="flex justify-center pt-1 text-xs">
-      <p class="text-red-600">{post.data.date}</p>
-    </div>
 
-    <div class="prose prose-2xl pt-2"><Content /></div>
+    <!-- tags section below -->
+
+    {
+      post.data.tags && (
+        <ul class="flex pt-3 pb-2 mx-auto w-full max-w-5xl">
+          Tags:
+          {post.data.tags.map((tag) => (
+            <li class="flex border border-black px-1 ml-1 justify-center transition-transform duration-300 hover:bg-black hover:text-ice">
+              <a href="" class="">
+                {tag}
+              </a>
+            </li>
+          ))}
+        </ul>
+      )
+    }
   </div>
+
+  <div class="prose prose-2xl pt-2"><Content /></div>
 </Layout>
