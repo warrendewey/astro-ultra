@@ -53,16 +53,16 @@
 }
 
 /* Images */
-.mdx-content .medium {
-  width: 49%;
+.mdx-content .large {
+  width: 99%;
   margin-top: 0.5rem;
   margin-bottom: 0rem;
   margin-left: auto;
   margin-right: auto;
 }
 
-.mdx-content .large {
-  width: 99%;
+.mdx-content .medium {
+  width: 75%;
   margin-top: 0.5rem;
   margin-bottom: 0rem;
   margin-left: auto;
@@ -77,6 +77,15 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+.mdx-content .multi {
+  width: 49%;
+  margin-top: 0.5rem;
+  margin-bottom: 0rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* Horizontal Rules */
 hr {
   margin: 20px 0; /* Adjust spacing */
