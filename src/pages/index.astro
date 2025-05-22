@@ -2,6 +2,14 @@
 import Layout from "../layouts/Layout.astro";
 import H1 from "../components/H1.astro";
 import H2 from "../components/H2.astro";
+
+// below this is the test javascript for getting the blog posts
+
+import { getCollection } from "astro:content";
+import PostList from "../components/PostList.astro";
+
+const posts = await getCollection("posts");
+console.log(posts);
 ---
 
 <Layout title="Home | Warren Dewey">
@@ -18,6 +26,7 @@ import H2 from "../components/H2.astro";
     </div>
     <section class="mt-8">
       <H2 text="Latest Blog Posts" />
+      <PostList posts={posts} />
     </section>
     <section class="mt-8"><H2 text="Featured Projects" /></section>
   </div>
